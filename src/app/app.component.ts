@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { MainService } from './main.service';
+
+import { InformationComponent } from './information/information.component';
+import { ValidationComponent } from './validation/validation.component';
+import { GuessesComponent } from './guesses/guesses.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +12,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'property_game';
+  constructor() { }
+
 }

@@ -1,0 +1,24 @@
+.image-container {
+    width: 600px;
+    height: 300px;
+    margin: auto;
+    border: 1px solid #ccc; /* Adding a border for visualization */
+
+    /* To center the image vertically and horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: auto;
+}
+
+.information-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}

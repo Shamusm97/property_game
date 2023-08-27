@@ -1,0 +1,22 @@
+[
+    {
+        "imgURLs": ["https://d15bpdo5z2ljet.cloudfront.net/platformnz/800x600-cp/593c1559-a110-4036-b549-2cf11825e1aa.jpg", "https://d15bpdo5z2ljet.cloudfront.net/platformnz/1920x1440-cp/66a39ed7-f953-4251-b913-3250c53d4ad0.jpg"],
+        "city": "Wellington",
+        "suburb": "Grenada Village",
+        "address": "6 Saba Way",
+        "sqrft": 191,
+        "bedrooms": 4,
+        "bathrooms": 2,
+        "price": 1250000
+    },
+    {
+        "imgURLs": ["https://d15bpdo5z2ljet.cloudfront.net/platformnz/1920x1440-cp/a79a0198-ffb6-48a5-be8f-73dc46cf1ece.jpg", "https://d15bpdo5z2ljet.cloudfront.net/platformnz/1920x1440-cp/ecb6fa5b-18a0-497e-9bfe-42f22e3ce0a4.jpg", "https://d15bpdo5z2ljet.cloudfront.net/platformnz/1920x1440-cp/e5d1feb3-2355-4b6a-a261-c6191845c489.jpg", "https://d15bpdo5z2ljet.cloudfront.net/platformnz/1920x1440-cp/4ba71275-2fa6-4310-b364-884d51ade69b.jpg", "https://d15bpdo5z2ljet.cloudfront.net/platformnz/1920x1440-cp/62995f39-692a-44ec-8e9a-b600b4408c26.jpg", "https://d15bpdo5z2ljet.cloudfront.net/platformnz/1920x1440-cp/da706146-b186-49a6-9129-3c27aa54349a.jpg", "https://d15bpdo5z2ljet.cloudfront.net/platformnz/1920x1440-cp/6fd2f951-1326-4c51-89a6-e2ffd51a0210.jpg", "https://d15bpdo5z2ljet.cloudfront.net/platformnz/1920x1440-cp/8e730e7b-6418-4bca-b03d-adb7d1571e33.jpg", "https://d15bpdo5z2ljet.cloudfront.net/platformnz/1920x1440-cp/4e3b2d1d-e713-4769-a7ab-96c483cfc8fc.jpg", "https://d15bpdo5z2ljet.cloudfront.net/platformnz/1920x1440-cp/b84fca4a-5eff-437c-93c3-48ce360ea7ac.jpg", "https://d15bpdo5z2ljet.cloudfront.net/platformnz/1920x1440-cp/ad5983c6-7f8f-456d-86b4-93ac943738d1.jpg", "https://d15bpdo5z2ljet.cloudfront.net/platformnz/1920x1440-cp/e2266c94-d1cf-49e5-9a4b-413d911e8f26.jpg", "https://d15bpdo5z2ljet.cloudfront.net/platformnz/1920x1440-cp/33619246-5339-4dae-b3d3-d10f3521a3cb.jpg", "https://d15bpdo5z2ljet.cloudfront.net/platformnz/1920x1440-cp/eb489844-1daf-43d2-9162-a0c63a42cc2c.jpg", "https://d15bpdo5z2ljet.cloudfront.net/platformnz/1920x1440-cp/d519c3d5-cefa-4591-9a93-64ef447d310f.jpg", "https://d15bpdo5z2ljet.cloudfront.net/platformnz/1920x1440-cp/0fed33ef-7648-4054-a8ab-9934a3b6701e.jpg"],
+        "city": "Wellington",
+        "suburb": "Titahi Bay",
+        "address": "22 De Castro Place",
+        "sqrft": 150,
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "price": 670000
+    }
+]

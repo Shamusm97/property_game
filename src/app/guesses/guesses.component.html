@@ -1,0 +1,8 @@
+<div class="guesses-container">
+    <div *ngFor="let guess of mainService.guesses; let i = index" class="guess-line">
+        <span *ngFor="let digit of guess.guessDigitArray; let j = index" class="guess-digit-box"
+        [ngStyle]="getStyleForDigit(i, j)">
+            {{ digit }}
+        </span>
+    </div>
+</div>
