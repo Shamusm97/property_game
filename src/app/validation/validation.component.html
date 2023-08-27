@@ -1,9 +1,8 @@
 <div class="validation-container">
-    <div class="digits-line">
+    <div class="digit-line">
         <span *ngFor="let i of [0, 1, 2, 3, 4, 5, 6, 7, 8]" class="digit-box">{{ enteredDigits[i] }}</span>
     </div>
-    <div class="buttons-container">
-        <button (click)="updateDigits(0)">0</button>
+    <div class="digit-buttons-container">
         <button (click)="updateDigits(1)">1</button>
         <button (click)="updateDigits(2)">2</button>
         <button (click)="updateDigits(3)">3</button>
@@ -13,6 +12,9 @@
         <button (click)="updateDigits(7)">7</button>
         <button (click)="updateDigits(8)">8</button>
         <button (click)="updateDigits(9)">9</button>
+        <button (click)="updateDigits(0)">0</button>
+    </div>
+    <div class="action-buttons-container">
         <button (click)="backspace()">Backspace</button>
         <button (click)="submit()">Submit</button>
     </div>

@@ -5,7 +5,7 @@
     margin: auto;
 }
 
-.digits-line {
+.digit-line {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -13,20 +13,52 @@
 }
 
 .digit-box {
-    width: 40px;
-    height: 50px;
-    border: 1px solid black;
+    width: 52px;
+    height: 52px;
+    border: 2px solid #3a3a3c;
     border-radius: 5px;
     margin: 0 3px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 30px;
+    font-weight: bold;
+    color: aliceblue;
 }
 
-.buttons-container {
+.digit-buttons-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-top: 20px;
+}
+
+.digit-buttons-container button {
+    width: 70px;
+    height: 70px;
+    margin: 0 5px;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: #818384;
+    border: #00000000;
+    border-radius: 10px;
+    color: aliceblue;
+}
+
+.action-buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.action-buttons-container button {
+    width: 300px;
+    height: 50px;
+    margin: 0 5px;
+    font-size: 30px;
+    background-color: #818384;
+    border: #00000000;
+    border-radius: 10px;
+    color: aliceblue;
 }

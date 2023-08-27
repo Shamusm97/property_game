@@ -2,7 +2,8 @@
     width: 600px;
     height: 300px;
     margin: auto;
-    border: 1px solid #ccc; /* Adding a border for visualization */
+    border: 2px solid #3a3a3c;
+    border-radius: 15px;
 
     /* To center the image vertically and horizontally */
     display: flex;
@@ -21,4 +22,6 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    color: aliceblue;
+    font-size: large;
 }

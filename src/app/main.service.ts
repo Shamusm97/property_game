@@ -42,19 +42,14 @@ export class MainService {
   
     for (let i = 0; i < 9; i++) {
       if (guessDigitArray[i] === priceDigitArray[i]) {
-        if (guessDigitArray[i] === null) {
-          // no digit
-          styles[i] = { 'background-color': 'white' };
-          break;
-        }
         // correct digit, correct position
-        styles[i] = { 'background-color': 'green' };
+        styles[i] = { 'background-color': '#538d4e' };
       } else if (priceDigitArray.includes(guessDigitArray[i])) {
         // correct digit, wrong position
-        styles[i] = { 'background-color': 'yellow' };
+        styles[i] = { 'background-color': '#b59f3b' };
       } else {
         // wrong digit
-        styles[i] = { 'background-color': 'red' };
+        styles[i] = { 'background-color': '#3a3a3c' };
       }
     }
     return styles;
