@@ -2,11 +2,66 @@
     <img [src]="images[0]">
 </div>
 <div class="information-container">
-    <p>City: {{ mainService.city }}</p>
-    <p>Suburb: {{ mainService.suburb }}</p>
-    <p>Address: {{ mainService.address }}</p>
-    <p>Sqrft: {{ mainService.sqrft }}</p>
-    <p>Bedrooms: {{ mainService.bedrooms }}</p>
-    <p>Bathrooms: {{ mainService.bathrooms }}</p>
-
+        <div class="information-card" [ngClass]="{'active': mainService.turnState >= 1}">
+            <div class="information-row">
+                <div class="information-column">
+                    <span>{{ this.mainService.suburb + " " + this.mainService.city }}</span>
+                    <p>Location</p>
+                </div>
+            </div>
+            <div class="information-row ">
+                <div class="information-column">
+                    <span>{{ this.mainService.bedrooms }}</span>
+                    <p>Beds</p>
+                </div>
+                <div class="information-column">
+                    <span>{{ this.mainService.bathrooms }}</span>
+                    <p>Baths</p>
+                </div>
+                <div class="information-column">
+                    <span>2000</span>
+                    <p>Built</p>
+                </div>
+            </div>
+        </div>
+        <div class="information-card" [ngClass]="{'active': mainService.turnState >= 2}">
+            <div class="information-row">
+                <div class="information-column">
+                    <span>Family home</span>
+                    <p>Property type</p>
+                </div>
+            </div>
+            <div class="information-row">
+                <div class="information-column">
+                    <span>{{ this.mainService.sqrft }}</span>
+                    <p>Sqrft</p>
+                </div>
+                <div class="information-column">
+                    <span> Some size</span>
+                    <p>Lot size</p>
+                </div>
+            </div>
+        </div>
+        <div class="information-card" [ngClass]="{'active': mainService.turnState >= 3}">
+            <div class="information-row">
+                <div class="information-column">
+                    <span>28/08/2023</span>
+                    <p>Prev sale</p>
+                </div>
+                <div class="information-column">
+                    <span>$9999999</span>
+                    <p>Prev price</p>
+                </div>
+            </div>
+            <div class="information-row">
+                <div class="information-column">
+                    <span>28/08/2023</span>
+                    <p>List date</p>
+                </div>
+                <div class="information-column">
+                    <span>$9999999</span>
+                    <p>List price</p>
+                </div>
+            </div>
+        </div>
 </div>

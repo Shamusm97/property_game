@@ -47,9 +47,8 @@ export class ValidationComponent {
   }
 
   submit(): void {
-    if (!this.mainService.outOfGuesses) {
+    if ((this.mainService.turnState < 5) && this.enteredDigits.length > 0) {
       this.mainService.updateGuesses(this.numberFromDigitsArray);
-      console.log('ValidationComponent! Submitted digits:', this.enteredDigits);
       this.resetDigits();
     }
   }

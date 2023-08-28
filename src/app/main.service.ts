@@ -25,35 +25,70 @@ export class MainService {
             guessNumber: number, 
             guessDigitArray: (number | null)[],
             result: string, 
-            difference: number, 
             style: { [key: string]: string }[] }[] = [];
 
-  outOfGuesses: boolean = false;
+  turnState: number = 0;
 
   constructor(private http: HttpClient) {
     this.servicePopulated = this.populateMainService();
   }
 
-  updateGuessLineStyles(guessNumber: number): { [key: string]: string }[] {
-    const guessDigitArray: (number | null)[] = this.convertNumberToDigitsArray(guessNumber);
-    const priceDigitArray: (number | null)[] = this.convertNumberToDigitsArray(this.price);
+  wordle = (guess: string, solution: string) => {
+
+    const extendedSolution = solution.padEnd(9, ' ')
+    const extendedGuess = guess.padEnd(9, ' ')
+
+    const splitSolution = extendedSolution.split('')
+    const splitGuess = extendedGuess.split('')
   
-    const styles: { [key: string]: string }[] = new Array(9).fill({});
+    const solutionCharsTaken = splitSolution.map((_) => false)
   
-    for (let i = 0; i < 9; i++) {
-      if (guessDigitArray[i] === priceDigitArray[i]) {
-        // correct digit, correct position
-        styles[i] = { 'background-color': '#538d4e' };
-      } else if (priceDigitArray.includes(guessDigitArray[i])) {
-        // correct digit, wrong position
-        styles[i] = { 'background-color': '#b59f3b' };
-      } else {
-        // wrong digit
-        styles[i] = { 'background-color': '#3a3a3c' };
+    const statuses = Array.from(Array(guess.length))
+  
+    /*
+     Correct Cases
+    */
+  
+    splitGuess.forEach((letter, i) => {
+      if (letter === splitSolution[i]) {
+        statuses[i] = {background: '#538d4e'}
+        solutionCharsTaken[i] = true
+        return
       }
-    }
-    return styles;
-  }  
+    })
+  
+    /*
+     Absent Cases
+    */
+  
+    splitGuess.forEach((letter, i) => {
+      if (statuses[i]) return
+  
+      if (!splitSolution.includes(letter)) {
+        statuses[i] = {background: '#3a3a3c'}
+        return
+      }
+  
+      /*
+      Present Cases
+      */
+  
+      const indexOfPresentChar = splitSolution.findIndex(
+        (x, index) => x === letter && !solutionCharsTaken[index]
+      )
+  
+      if (indexOfPresentChar > -1) {
+        statuses[i] = {background: '#b59f3b'}
+        solutionCharsTaken[indexOfPresentChar] = true
+        return
+      } else {
+        statuses[i] = {background: '#3a3a3c'}
+        return
+      }
+    })
+
+    return statuses
+  }
 
   convertNumberToDigitsArray(number: number): (number | null)[] {
     const digitsArray: (number | null)[] = new Array(9).fill(null);
@@ -68,47 +103,25 @@ export class MainService {
   }  
 
   updateGuesses(guessNumber: number): void {
-
-    this.outOfGuesses = this.checkState();
-    if (this.outOfGuesses) {
+  
+    if (this.turnState == 5) {
       return;
     }
 
     let newGuessIndex = this.guesses.length + 1;
-    let newDifference = Math.abs(this.price - guessNumber);
     let newResult = "";
-    if (newDifference === 0) {
-      newResult = "Correct!";
-    }
-    else if (newDifference < 10000) {
-      newResult = "Very Close!";
-    }
-    else if (newDifference < 50000) {
-      newResult = "Close!";
-    }
-    else if (newDifference < 100000) {
-      newResult = "Not Close!";
-    }
-    else {
-      newResult = "Very Far!";
-    }
+
     this.guesses.push({ guessIndex: newGuessIndex, 
                         guessNumber: guessNumber, 
                         guessDigitArray: this.convertNumberToDigitsArray(guessNumber),
                         result: newResult, 
-                        difference: newDifference, 
-                        style: this.updateGuessLineStyles(guessNumber)});
+                        style: this.wordle(guessNumber.toString(), this.price.toString())});
     console.log("MainService! updated guesses: ", this.guesses);
-    this.outOfGuesses = this.checkState();
+    this.turnState = this.checkState();
   }
 
-  checkState(): boolean {
-    if (this.guesses.length > 4) {
-      return true;
-    }
-    else {
-      return false;
-    }
+  checkState(): number {
+    return this.guesses.length;
   }
 
   getPropertyData(): Observable<any> {

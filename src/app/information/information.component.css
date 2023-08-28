@@ -20,8 +20,65 @@
 .information-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     color: aliceblue;
-    font-size: large;
+    font-size: small;
+}
+
+.information-card {
+    width: 250px;
+    height: 110px;
+    background-color: #3a3a3c;
+    border: 2px solid #1a1a1b;
+    border-radius: 15px;
+    margin: 10px 0px;
+
+    /* To center the image vertically and horizontally */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    transition: transform 0.5s ease-in-out;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+.information-card.active {
+    transform: rotateY(0deg);
+}
+
+.information-column {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center;
+    align-items: center;
+    margin: 0px 10px;
+}
+
+.information-row {
+    display: flex;
+    flex-direction: row; /* Stack items horizontally */
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.information-row p {
+    font-weight: normal;
+    margin: 5px 0px;
+}
+
+.information-row span {
+    font-weight: bold;
+}
+@media screen and (max-width: 800px) {
+    .information-card {
+    }
+}
+@media screen and (max-width: 600px) {
+    .image-container {
+        width: calc(100%);
+        margin: auto;
+    }
 }
