@@ -1,5 +1,5 @@
 .image-container {
-    width: 600px;
+    max-width: 600px;
     height: 300px;
     margin: auto;
     border: 2px solid #3a3a3c;
@@ -29,7 +29,7 @@
 .information-card {
     width: 250px;
     height: 110px;
-    background-color: #3a3a3c;
+    background-color: #818384;
     border: 2px solid #1a1a1b;
     border-radius: 15px;
     margin: 10px 0px;
@@ -72,13 +72,21 @@
 .information-row span {
     font-weight: bold;
 }
-@media screen and (max-width: 800px) {
-    .information-card {
-    }
-}
 @media screen and (max-width: 600px) {
     .image-container {
         width: calc(100%);
+        height: auto;
         margin: auto;
+        max-height: 300px;
     }
+}
+
+@media screen and (max-width: 500px) {
+    .information-row p {
+        font-size: 10px;
+    }
+    .information-row span {
+        font-size: 10px;
+    }
+
 }
